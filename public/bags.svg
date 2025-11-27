@@ -1,0 +1,15 @@
+<!-- Icono Candado (scalable, usa currentColor) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true" role="img">
+  <title>bags</title>
+  <rect x="12" y="10" width="40" height="30" rx="6" fill="none" stroke="#707070ff" stroke-width="1.6"/>
+<!-- manija del bolso -->
+<path 
+    d="M20 10 
+       Q32 0 44 10" 
+    fill="none" 
+    stroke="#707070ff" 
+    stroke-width="1.6"
+    stroke-linecap="round"
+  />
+</svg>
+

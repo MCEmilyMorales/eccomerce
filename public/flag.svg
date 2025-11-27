@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true" role="img">
+  <!-- Estilo global: solo borde, fondo transparente -->
+  <g fill="none" stroke="#707070ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rectángulo de bandera -->
+  <rect x="12" y="14" width="40" height="26" rx="1"/>
+    <!-- mastil -->
+    <path d="M12 40 V56" />
+  </g>
+</svg>
+
+

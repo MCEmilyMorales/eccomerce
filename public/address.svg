@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true" role="img">
+  <!-- Estilo global: solo borde, fondo transparente -->
+  <g fill="none" stroke="#707070ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Pin de ubicación -->
+    <path d="M32 8
+             C27 8 23 12 23 17
+             C23 25 32 36 32 36
+             C32 36 41 25 41 17
+             C41 12 37 8 32 8Z" />
+    <circle cx="32" cy="17" r="3"/>
+
+    <!-- Tarjeta / input con esquinas redondeadas -->
+    <rect x="6" y="30" width="52" height="32" rx="3"/>
+
+    <!-- Casa (solo contorno) en la izquierda dentro de la tarjeta -->
+    <!-- Techo M12=largo del ala izquierda, 42=direccion del ala izquierda desde la punta izquierda, L19=direccion de la union de las alas, 36=altura de la arista del techo-top,L26=direccion del ala derecha, 42=direccion del ala derecha desde la punta izquierda-->
+    <path d="M12 42 L19 36 L26 42" />
+    <!-- Paredes y puerta (contorno):M14=distancia,margin left, 44=largo de linea izquierda,V56=distancia,margin button, H24= distancia de V44 desde la izquierda a la derecha, V44=largo de linea derecha,top ,  -->
+    <path d="M14 44 V56 H24 V44" />
+
+    <!-- Líneas de texto a la derecha -->
+    <path d="M30 42 H52" />
+    <path d="M30 48 H52" />
+    <path d="M30 54 H52" />
+  </g>
+</svg>

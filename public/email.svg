@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#707070ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rectángulo del sobre -->
+  <rect x="2" y="5" width="20" height="14" rx="1"/>
+
+  <!-- Triángulo centrado -->
+  <path d="M3 7.5l9 6 9-6" />
+</svg>
+

@@ -1,26 +1,82 @@
 @import "tailwindcss";
-
+/** cambiar el color de la pantalla, dark y white*/
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --violet-05: #f5f3ff;
+  --violet-4: #a683ff;
+  --violet-5: #8d51ff;
+  --gray-2: #e5e7eb;
+  --gray-5: #6a7282;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-violet-05: var(--violet-05);
+  --color-violet-4: var(--violet-4);
+  --color-violet-5: var(--violet-5);
+  --color-gray-2: var(--gray-2);
+  --color-gray-5: var(--gray-5);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --violet-05: #171717;
+    --violet-4: #824aeb;
+    --violet-5: #7f22fe;
+    --gray-2: #4a5565;
+    --gray-5: #cecfd1;
   }
 }
-
+/* color de acuerdo al sistema */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* animaciones */
+@theme {
+  --animate-slideIn: slideIn 0.3s ease-out;
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--violet-05) inset !important;
+    -webkit-text-fill-color: var(--gray-5);
+    transition: background-color 9999s ease-out 0s;
+  }
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    appearance: none !important; /* Quita fondo nativo */
+    background: var(--violet-05) !important; /* Fondo real */
+    -webkit-box-shadow: 0 0 0px 1000px var(--violet-05) inset !important;
+    -webkit-text-fill-color: var(--gray-5);
+    transition: background-color 9999s ease-out 0s;
+  }
+  /* Hover manual del select */
+  select:hover {
+    background: var(--violet-05) !important;
+    color: var(--gray-5) !important;
+  }
 }
