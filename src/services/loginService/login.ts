@@ -18,6 +18,7 @@ const Login = async (loginData: LoginData) => {
       return answer.data.accessToken;
     }
   } catch (error: unknown) {
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
     console.error("Error 🏃‍♂️", error);
     throw error;
   }
