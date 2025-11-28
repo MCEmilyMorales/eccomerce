@@ -2,10 +2,14 @@ import axios from "axios";
 
 const host = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true,
 });
+console.log(
+  "process.env.NEXT_PUBLIC_API_URL_",
+  process.env.NEXT_PUBLIC_API_URL,
+);
 
 export default host;
