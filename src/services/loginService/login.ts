@@ -8,9 +8,7 @@ const Login = async (loginData: LoginData) => {
     const loginVerified = loginSchema.parse(loginData);
 
     //Espero la respuesta del servidor back
-    const answer = await host.post("auth/signin", loginVerified, {
-      withCredentials: true,
-    });
+    const answer = await host.post("auth/signin", loginVerified);
 
     if (answer.data.success) {
       //tengo que decirle al front cual es la cookie para que pueda moverse entre componentes
