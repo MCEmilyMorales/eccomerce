@@ -4,7 +4,9 @@ export const Products = async () => {
   try {
     console.log("host de products", host);
 
-    const productsBack = await host.get("/products", { withCredentials: true });
+    const productsBack = await host.get("/products", {
+      withCredentials: true,
+    });
 
     return productsBack.data;
   } catch (error: unknown) {
