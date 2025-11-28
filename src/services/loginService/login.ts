@@ -6,9 +6,9 @@ const Login = async (loginData: LoginData) => {
   try {
     //verifico con zod nuevamente
     const loginVerified = loginSchema.parse(loginData);
-    console.log("host de login", host.name);
+    console.log("host de login", host);
 
-    //Espero la respuesta del servidor back
+    //uso la api del front
     const answer = await host.post("auth/signin", loginVerified, {
       withCredentials: true,
     });

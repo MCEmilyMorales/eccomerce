@@ -1,15 +1,21 @@
 import { Product } from "@/services/productsService/productsData.type";
 import { Fragment, useEffect, useState } from "react";
-import getProductos from "../getProductos";
+// import getProductos from "../getProductos";
 import ProductCard from "@/components/ecommerce/ProductCard";
 
 const PageProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  //* recibe toda la lista de productos
+  //* recibe toda la lista de productos del back
+  // useEffect(() => {
+  //   getProductos().then(setProducts);
+  // }, []);
+  //* recibe toda la lista de productos del frontapiroute
   useEffect(() => {
-    getProductos().then(setProducts);
+    fetch("/api/products", { credentials: "include" })
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error(err));
   }, []);
-
   return (
     <>
       <div className="relative px-4 grid sm:grid-cols-2 md:grid-cols-4 md:gap-8 justify-items-center">
