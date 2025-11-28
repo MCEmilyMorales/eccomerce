@@ -4,6 +4,8 @@ import axios from "axios";
 
 export async function GET(req: NextRequest) {
   try {
+    console.log("pasa por el get de producto?");
+
     // Llamada al backend en Render
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
       withCredentials: true,

@@ -4,8 +4,7 @@ import { NextResponse, NextRequest } from "next/server";
 export async function proxy(request: NextRequest) {
   try {
     console.log('"cookie":', request.headers);
-    const cookie =
-      request.headers.get("cookie")?.includes("refreshToken=") ?? "";
+    const cookie = request.headers.get("Authorization") ?? "";
 
     if (cookie) {
       // Usuario autenticado

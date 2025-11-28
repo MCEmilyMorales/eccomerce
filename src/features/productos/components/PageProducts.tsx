@@ -11,7 +11,7 @@ const PageProducts = () => {
   // }, []);
   //* recibe toda la lista de productos del frontapiroute
   useEffect(() => {
-    fetch("/api/products", { credentials: "include" })
+    fetch("/src/app/api/products", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error(err));
