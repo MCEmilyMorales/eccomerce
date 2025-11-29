@@ -21,11 +21,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   //si existe un refreshToken en la cookie, entonces cargar el user
+  //-cambiar, si el usuario esta autenticado deberia crear una cookie para el uso del front
+
   useEffect(() => {
     const rehydrate = async () => {
       try {
         const data = await Refresh();
         if (data) {
+          //cargar la respuesta en la cookie
+          document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
           setUser(data);
         }
       } catch (error) {

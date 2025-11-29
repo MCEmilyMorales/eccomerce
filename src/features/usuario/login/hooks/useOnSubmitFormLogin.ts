@@ -1,4 +1,4 @@
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AxiosError } from "axios";
 
 import { useAuth } from "@/app/hooks/authContext";
@@ -10,7 +10,7 @@ import { ZodError } from "zod";
 type HandleLogin = (event: React.FormEvent, login: LoginData) => Promise<void>;
 
 const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const { successfulLogin } = useAuth();
 
@@ -25,9 +25,14 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
       const answerBack = await Login(login);
 
       if (answerBack) {
+        //cargar la respuesta en la cookie
+        document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
+        //respuesta de cliente
         addToast("Inicio de sesion exitoso", "success");
+        //envio de informacion al cliente
         successfulLogin(answerBack);
-        // router.push("/private/productos");
+        //redireccion
+        router.push("/private/productos");
         return;
       }
     } catch (error: unknown) {

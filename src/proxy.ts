@@ -3,10 +3,9 @@ import { NextResponse, NextRequest } from "next/server";
 // This function can be marked `async` if using `await` inside
 export async function proxy(request: NextRequest) {
   try {
-    console.log('"cookie":', request.headers);
-    const cookie = request.headers.get("Authorization") ?? "";
+    const isLogged = request.cookies.get("isLoggedIn")?.value === "true";
 
-    if (cookie) {
+    if (isLogged) {
       // Usuario autenticado
       return NextResponse.next();
     }
