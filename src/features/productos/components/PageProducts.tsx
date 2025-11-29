@@ -9,13 +9,7 @@ const PageProducts = () => {
   useEffect(() => {
     getProductos().then(setProducts);
   }, []);
-  //* recibe toda la lista de productos del frontapiroute
-  // useEffect(() => {
-  //   fetch("/src/app/api/products", { credentials: "include" })
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data))
-  //     .catch((err) => console.error(err));
-  // }, []);
+
   return (
     <>
       <div className="relative px-4 grid sm:grid-cols-2 md:grid-cols-4 md:gap-8 justify-items-center">

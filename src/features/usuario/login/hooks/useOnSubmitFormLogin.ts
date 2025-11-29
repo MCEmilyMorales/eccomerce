@@ -27,7 +27,7 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
       if (answerBack) {
         //cargar la respuesta en la cookie
         document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
-        //respuesta de cliente
+        //mensaje para usuario
         addToast("Inicio de sesion exitoso", "success");
         //envio de informacion al cliente
         successfulLogin(answerBack);
@@ -49,8 +49,8 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
         addToast(msg, "warning");
         throw error;
       }
+      //mensaje para usuario
       addToast("Error. Intente mas tarde.", "error");
-
       throw error instanceof Error ? error : new Error(String(error));
     }
   };

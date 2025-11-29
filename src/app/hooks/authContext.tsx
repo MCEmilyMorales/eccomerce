@@ -20,8 +20,6 @@ const AuthContext = createContext<AuthContext | null>(null);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  //si existe un refreshToken en la cookie, entonces cargar el user
-  //-cambiar, si el usuario esta autenticado deberia crear una cookie para el uso del front
 
   useEffect(() => {
     const rehydrate = async () => {
@@ -43,7 +41,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const successfulLogin = (data: string) => setUser(data);
 
   // metodo que limpia la cookie
-  const logout = () => setUser(null);
+  const logout = () => {
+    document.cookie =
+      "isLoggedIn=; path=/; SameSite=Lax; Secure; Expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    return setUser(null);
+  };
 
   return (
     <AuthContext.Provider value={{ user, loading, successfulLogin, logout }}>
