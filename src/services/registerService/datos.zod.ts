@@ -4,12 +4,12 @@ z.config(z.locales.es());
 
 const name = z
   .string("El nombre es obligatorio.")
-  .min(2)
-  .max(38, "El apellido debe contener menos de 38 caracteres.");
+  .min(2, "El nombre es obligatorio.")
+  .max(38, "El nombre debe contener menos de 38 caracteres.");
 
 const lastName = z
   .string("El apellido es obligatorio.")
-  .min(1)
+  .min(1, "El apellido es obligatorio.")
   .max(39, "El apellido debe contener menos de 39 caracteres.");
 
 export const email = z.email("Correo inválido.");

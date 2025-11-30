@@ -3,7 +3,7 @@ import { Datos } from "@/services/registerService/datos.types";
 import { Register } from "@/services/registerService/register";
 import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
-import { array, ZodError } from "zod";
+import { ZodError } from "zod";
 
 const useOnSubmitFormRegister = () => {
   const { addToast } = useToast();

@@ -6,7 +6,7 @@ import Login from "@/services/loginService/login";
 import { LoginData } from "@/services/loginService/loginData.type";
 import { useToast } from "@/app/hooks/toastContext";
 import { ZodError } from "zod";
-//tipo de datos que deveria recibir la arrayfunction HandleLogin
+//tipo de datos que deberia recibir la arrayfunction HandleLogin
 type HandleLogin = (event: React.FormEvent, login: LoginData) => Promise<void>;
 
 const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
