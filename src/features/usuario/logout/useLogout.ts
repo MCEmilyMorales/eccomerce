@@ -1,6 +1,6 @@
 import { useAuth } from "@/app/hooks/authContext";
 import { useToast } from "@/app/hooks/toastContext";
-import Logout from "@/services/loginService/logoutService/logout";
+import Logout from "@/services/logoutService/logout";
 import { AxiosError } from "axios";
 import { redirect } from "next/navigation";
 

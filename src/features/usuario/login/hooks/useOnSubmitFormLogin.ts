@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { AxiosError } from "axios";
 
 import { useAuth } from "@/app/hooks/authContext";
@@ -10,8 +10,6 @@ import { ZodError } from "zod";
 type HandleLogin = (event: React.FormEvent, login: LoginData) => Promise<void>;
 
 const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
-  const router = useRouter();
-
   const { successfulLogin } = useAuth();
 
   const { addToast } = useToast();
@@ -32,8 +30,7 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
         //mensaje para usuario
         addToast("Inicio de sesion exitoso", "success");
         //redireccion
-        router.push("/private/productos");
-        return;
+        redirect("/private/productos");
       }
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
