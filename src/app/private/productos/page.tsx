@@ -1,6 +1,10 @@
 "use client";
-import PageProducts from "@/features/productos/components/PageProducts";
 
+import dynamic from "next/dynamic";
+
+const PageProducts = dynamic(
+  () => import("@/features/productos/components/PageProducts"),
+);
 const Productos = () => {
   return (
     <>

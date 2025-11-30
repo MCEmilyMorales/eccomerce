@@ -14,10 +14,11 @@ const useOnSubmitFormRegister = () => {
       const registro = await Register(datos);
       if (registro) {
         //mensaje a cliente
-        addToast("Registrado exitoso", "success");
-        router.push("/inicio");
+        addToast("Registro exitoso", "success");
         //mensaje a cliente
         addToast("Por favor inicia sesion", "info");
+        router.push("/inicio");
+        return;
       }
     } catch (error: unknown) {
       if (error instanceof AxiosError) {

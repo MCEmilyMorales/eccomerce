@@ -27,10 +27,10 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
       if (answerBack) {
         //cargar la respuesta en la cookie
         document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
+        // informacion para el local
+        successfulLogin(answerBack);
         //mensaje para usuario
         addToast("Inicio de sesion exitoso", "success");
-        //envio de informacion al cliente
-        successfulLogin(answerBack);
         //redireccion
         router.push("/private/productos");
         return;
