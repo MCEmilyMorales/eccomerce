@@ -5,13 +5,13 @@ export async function proxy(request: NextRequest) {
   try {
     const isLogged = request.cookies.get("isLoggedIn")?.value === "true";
 
-    if (isLogged) {
+    if (!isLogged) {
       // Usuario autenticado
-      return NextResponse.next();
+      console.warn("⚠️ Usuario no autenticado");
+      return NextResponse.redirect(new URL("/inicio", request.url));
     }
 
-    console.warn("⚠️ Usuario no autenticado");
-    return NextResponse.redirect(new URL("/inicio", request.url));
+    return NextResponse.next();
   } catch (err) {
     console.error("Error en middleware:", err);
     return NextResponse.redirect(new URL("/inicio", request.url));
