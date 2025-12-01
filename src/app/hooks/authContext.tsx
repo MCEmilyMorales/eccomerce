@@ -10,7 +10,6 @@ import {
 
 type AuthContext = {
   user: string | null;
-  loading: boolean;
   successfulLogin: (val: string) => void;
   logout: () => void;
 };
@@ -19,7 +18,6 @@ const AuthContext = createContext<AuthContext | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const rehydrate = async () => {
@@ -33,7 +31,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       } catch (error) {
         setUser(null);
       }
-      setLoading(false);
     };
     rehydrate();
   }, []);
@@ -48,7 +45,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, successfulLogin, logout }}>
+    <AuthContext.Provider value={{ user, successfulLogin, logout }}>
       {children}
     </AuthContext.Provider>
   );

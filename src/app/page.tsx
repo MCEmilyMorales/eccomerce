@@ -32,7 +32,6 @@ export default function Home() {
   const { isVisible, carruselRefPrueba } = carruselRef();
   useEffect(() => {
     if (!isVisible) return; // ⬅️ no está visible → NO avanza
-    console.log("avanza?");
 
     const timer = setTimeout(() => {
       setIndex((prev) => (prev + 1) % imagenes.length);

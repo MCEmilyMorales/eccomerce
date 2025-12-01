@@ -31,7 +31,6 @@ const FormLogin = () => {
     <>
       <form
         onSubmit={(e) => handleFormLogin(e, login)}
-        action={"#"}
         className="col-start-2 px-8 pt-8 pb-16"
       >
         <div>

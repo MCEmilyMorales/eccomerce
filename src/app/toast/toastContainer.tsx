@@ -13,7 +13,7 @@ const ToastContainer = () => {
   };
 
   return (
-    <div className="fixed top-5 right-5 z-40">
+    <div className="fixed top-14 right-5 z-40">
       {toasts.map((t) => (
         <div
           key={t.id}

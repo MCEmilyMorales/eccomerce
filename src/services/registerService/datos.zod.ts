@@ -16,7 +16,14 @@ export const email = z.email("Correo inválido.");
 
 export const password = z
   .string("La contraseña es OBLIGATORIA.")
-  .min(8, "La contraseña debe tener al menos 8 caracteres.");
+  .min(
+    8,
+    "La contraseña debe tener al menos 8 caracteres. Una letra mayúscula. Una letra minúscula. Un número. Un símbolo.",
+  )
+  .regex(/[A-Z]/, "Debe contener una letra mayúscula")
+  .regex(/[a-z]/, "Debe contener una letra minúscula")
+  .regex(/[0-9]/, "Debe contener un número")
+  .regex(/[^A-Za-z0-9]/, "Debe contener un símbolo");
 
 const address = z
   .string("La dirección es obligatoria.")

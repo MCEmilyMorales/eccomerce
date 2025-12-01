@@ -85,8 +85,8 @@ const CartItem = () => {
                 <Fragment key={p.id}>
                   <tr>
                     {/* imagen  */}
-                    <td className="relative py-8 flex items-center justify-center w-auto h-auto">
-                      <Image src={p.img} alt="img" fill />
+                    <td className="relative py-8 flex items-center justify-center">
+                      <Image src={p.img} alt="img" width={32} height={32} />
                     </td>
                     {/* nombre del producto  */}
                     <td className="pl-2">{p.name}</td>
