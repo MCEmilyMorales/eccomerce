@@ -1,8 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import CartItem from "@/components/ecommerce/CartItem";
 
-const CartItem = dynamic(() => import("@/components/ecommerce/CartItem"));
 const Carrito = () => {
   return (
     <>

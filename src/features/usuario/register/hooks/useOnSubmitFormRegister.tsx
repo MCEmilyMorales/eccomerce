@@ -1,3 +1,5 @@
+"use client";
+
 import { useToast } from "@/app/hooks/toastContext";
 import { Datos } from "@/services/registerService/datos.types";
 import { Register } from "@/services/registerService/register";
