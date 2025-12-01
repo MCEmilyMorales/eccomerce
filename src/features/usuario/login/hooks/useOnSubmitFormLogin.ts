@@ -8,10 +8,13 @@ import Login from "@/services/loginService/login";
 import { LoginData } from "@/services/loginService/loginData.type";
 import { useToast } from "@/app/hooks/toastContext";
 import { ZodError } from "zod";
+
 //tipo de datos que deberia recibir la arrayfunction HandleLogin
 type HandleLogin = (event: React.FormEvent, login: LoginData) => Promise<void>;
 
-const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
+const useOnSubmitFormLogin = (
+  setLogin: React.Dispatch<React.SetStateAction<LoginData>>,
+): { handleFormLogin: HandleLogin } => {
   const router = useRouter();
   const { successfulLogin } = useAuth();
 
@@ -29,10 +32,11 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
       successfulLogin(answerBack);
       //mensaje para usuario
       addToast("Inicio de sesion exitoso", "success");
-      if (answerBack) {
-        //redireccion
-        router.push("/private/productos");
-      }
+      //redireccion
+      console.log("redirecciona a private/productos");
+
+      router.push("/private/productos");
+      setLogin({ email: "", password: "" });
     } catch (error: unknown) {
       if (error instanceof AxiosError) {
         const msg =

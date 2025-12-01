@@ -25,7 +25,7 @@ const FormLogin = () => {
   const { validateField } = useInputErrorZod(loginSchema, login, setErrors);
 
   //envio FORMULARIO al servidor
-  const { handleFormLogin } = useOnSubmitFormLogin();
+  const { handleFormLogin } = useOnSubmitFormLogin(setLogin);
 
   return (
     <>

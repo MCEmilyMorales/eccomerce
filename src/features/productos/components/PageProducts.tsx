@@ -4,13 +4,18 @@ import { Product } from "@/services/productsService/productsData.type";
 import { Fragment, useEffect, useState } from "react";
 import getProductos from "../getProductos";
 import ProductCard from "@/components/ecommerce/ProductCard";
+import { useAuth } from "@/app/hooks/authContext";
 
 const PageProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const { user } = useAuth();
+  console.log("paso dentro de pagina de productos", products);
+
   //* recibe toda la lista de productos del back
   useEffect(() => {
+    if (!user) return;
     getProductos().then(setProducts);
-  }, []);
+  }, [user]);
 
   return (
     <>
