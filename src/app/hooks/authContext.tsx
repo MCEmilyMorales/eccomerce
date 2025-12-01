@@ -37,6 +37,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // metodo que limpia la cookie
   const logout = () => {
+    document.cookie =
+      "isLoggedIn=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 UTC; Secure; SameSite=Lax;";
     return setUser(null);
   };
 

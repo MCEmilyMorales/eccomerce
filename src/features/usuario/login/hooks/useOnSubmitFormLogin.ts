@@ -24,11 +24,12 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
     event.preventDefault();
     try {
       const answerBack = await Login(login);
+      document.cookie = "isLoggedIn=true; Path=/; Secure; SameSite=Lax;";
+      // informacion para el local
+      successfulLogin(answerBack);
+      //mensaje para usuario
+      addToast("Inicio de sesion exitoso", "success");
       if (answerBack) {
-        // informacion para el local
-        successfulLogin(answerBack);
-        //mensaje para usuario
-        addToast("Inicio de sesion exitoso", "success");
         //redireccion
         router.push("/private/productos");
       }

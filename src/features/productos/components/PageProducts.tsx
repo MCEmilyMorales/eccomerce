@@ -1,3 +1,5 @@
+"use client";
+
 import { Product } from "@/services/productsService/productsData.type";
 import { Fragment, useEffect, useState } from "react";
 import getProductos from "../getProductos";
