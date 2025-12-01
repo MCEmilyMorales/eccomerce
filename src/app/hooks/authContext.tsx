@@ -24,8 +24,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         const data = await Refresh();
         if (data) {
-          //cargar la respuesta en la cookie
-          document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
           setUser(data);
         }
       } catch (error) {
@@ -39,8 +37,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   // metodo que limpia la cookie
   const logout = () => {
-    document.cookie =
-      "isLoggedIn=; path=/; SameSite=Lax; Secure; Expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     return setUser(null);
   };
 

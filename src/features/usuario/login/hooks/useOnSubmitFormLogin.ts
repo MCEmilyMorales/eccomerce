@@ -24,10 +24,7 @@ const useOnSubmitFormLogin = (): { handleFormLogin: HandleLogin } => {
     event.preventDefault();
     try {
       const answerBack = await Login(login);
-
       if (answerBack) {
-        //cargar la respuesta en la cookie
-        document.cookie = "isLoggedIn=true; path=/; SameSite=Lax; Secure";
         // informacion para el local
         successfulLogin(answerBack);
         //mensaje para usuario
