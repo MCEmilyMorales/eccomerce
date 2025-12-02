@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const Productos = () => {
   const [productos, setProductos] = useState<Product[] | null>(null);
+  console.log("despues del login llama a la page de products");
 
   useEffect(() => {
     const fetchProducts = async () => {
