@@ -11,7 +11,7 @@ type Props = {
 const PageProducts = ({ products }: Props) => {
   console.log("paso 2️⃣: llama a getProducts()", products);
 
-  if (!products.length) return <div>Cargando productos...</div>;
+  if (!products.length) return <div>Cargando productos 🙂 </div>;
   console.log("paso 3️⃣ : tiene productos?", products);
 
   return (
