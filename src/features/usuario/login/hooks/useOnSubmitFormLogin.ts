@@ -27,17 +27,13 @@ const useOnSubmitFormLogin = (
     event.preventDefault();
     try {
       const answerBack = await Login(login);
-      document.cookie = "isLoggedIn=true; Path=/; Secure; SameSite=Lax;";
       // informacion para el local
       successfulLogin(document.cookie);
       //mensaje para usuario
       addToast("Inicio de sesion exitoso", "success");
       //redireccion, pero puedo hacer el llamado automatico al get de productos
-
-      setTimeout(() => {
-        console.log("redirecciona a private/productos");
-        router.push("/private/productos");
-      }, 300);
+      console.log("redirecciona a private/productos");
+      router.push("/private/productos");
 
       setLogin({ email: "", password: "" });
     } catch (error: unknown) {

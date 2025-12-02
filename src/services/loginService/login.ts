@@ -13,6 +13,8 @@ const Login = async (loginData: LoginData) => {
     });
 
     if (answer.data.success) {
+      //Cookie para el front
+      document.cookie = "isLoggedIn=true; Path=/; Secure; SameSite=Lax;";
       // answer.headers["set-cookie"];
       return answer.data.accessToken;
     }

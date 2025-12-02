@@ -7,6 +7,7 @@ import useLogout from "@/features/usuario/logout/useLogout";
 const Navbar = () => {
   const { handleLogout, user } = useLogout();
   const userAutorizado = user?.includes("isLoggedIn=true");
+  console.log("🍏 :", userAutorizado);
 
   return (
     <>
