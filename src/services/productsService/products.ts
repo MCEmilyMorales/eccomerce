@@ -2,6 +2,8 @@ import host from "@/services/apiBack";
 
 export const Products = async () => {
   try {
+    console.log("5️⃣ cuantas veces llame a este metodo??");
+
     const productsBack = await host.get("/products", {
       withCredentials: true,
     });

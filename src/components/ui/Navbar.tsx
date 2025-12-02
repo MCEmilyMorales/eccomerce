@@ -6,6 +6,7 @@ import useLogout from "@/features/usuario/logout/useLogout";
 
 const Navbar = () => {
   const { handleLogout, user } = useLogout();
+  const userAutorizado = user?.includes("isLoggedIn=true");
 
   return (
     <>
@@ -22,7 +23,7 @@ const Navbar = () => {
             <h1 className="font-bold tracking-[.25em]"> Estilo </h1>
           </div>
           {/* INICIO DE SESION */}
-          {user ? (
+          {userAutorizado ? (
             <ul className="flex flex-row justify-around list-none">
               <li className="hover:font-bold focus:font-bold">
                 <Link href={"/"}> Home </Link>

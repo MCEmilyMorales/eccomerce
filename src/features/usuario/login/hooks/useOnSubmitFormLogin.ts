@@ -29,10 +29,10 @@ const useOnSubmitFormLogin = (
       const answerBack = await Login(login);
       document.cookie = "isLoggedIn=true; Path=/; Secure; SameSite=Lax;";
       // informacion para el local
-      successfulLogin(answerBack);
+      successfulLogin(document.cookie);
       //mensaje para usuario
       addToast("Inicio de sesion exitoso", "success");
-      //redireccion
+      //redireccion, pero puedo hacer el llamado automatico al get de productos
       console.log("redirecciona a private/productos");
 
       router.push("/private/productos");

@@ -4,18 +4,28 @@ import { Product } from "@/services/productsService/productsData.type";
 import { Fragment, useEffect, useState } from "react";
 import getProductos from "../getProductos";
 import ProductCard from "@/components/ecommerce/ProductCard";
-import { useAuth } from "@/app/hooks/authContext";
 
 const PageProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const { user } = useAuth();
-  console.log("paso dentro de pagina de productos", products);
 
-  //* recibe toda la lista de productos del back
   useEffect(() => {
-    if (!user) return;
-    getProductos().then(setProducts);
-  }, [user]);
+    const hasCookie = document.cookie.includes("isLoggedIn=true");
+
+    if (hasCookie) {
+      getProductos().then(setProducts);
+    } else {
+      console.warn("🍪 Cookie no disponible aún");
+      // Opcional: reintentar luego de un delay
+      setTimeout(() => {
+        getProductos().then(setProducts);
+      }, 1000);
+    }
+  }, []);
+
+  console.log("paso 2️⃣: llama a getProducts()", products);
+
+  if (!products) return <div>Cargando productos...</div>;
+  console.log("paso 3️⃣ : tiene productos?", products);
 
   return (
     <>

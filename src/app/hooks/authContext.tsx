@@ -24,7 +24,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       try {
         const data = await Refresh();
         if (data) {
-          setUser(data);
+          document.cookie = "isLoggedIn=true; Path=/; Secure; SameSite=Lax;";
+          setUser(document.cookie);
         }
       } catch (error) {
         setUser(null);
