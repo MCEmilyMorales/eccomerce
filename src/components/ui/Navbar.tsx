@@ -30,11 +30,11 @@ const Navbar = () => {
               </li>
 
               <li className="hover:font-bold focus:font-bold">
-                <Link href={"/private/productos"}> Products </Link>
+                <Link href={"/private/panel/"}> Products </Link>
               </li>
 
               <li className="hover:font-bold focus:font-bold">
-                <Link href={"/private/carrito"}> Cart </Link>
+                <Link href={"/private/panel/carrito"}> Cart </Link>
               </li>
 
               <li className="hover:font-bold focus:font-bold">

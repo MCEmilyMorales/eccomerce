@@ -32,8 +32,8 @@ const useOnSubmitFormLogin = (
       //mensaje para usuario
       addToast("Inicio de sesion exitoso", "success");
       //redireccion, pero puedo hacer el llamado automatico al get de productos
-      console.log("redirecciona a private/productos");
-      router.push("/private/productos");
+      console.log("redirecciona a private/panel/");
+      router.push("/private/panel/");
 
       setLogin({ email: "", password: "" });
     } catch (error: unknown) {
