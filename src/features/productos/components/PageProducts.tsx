@@ -9,15 +9,12 @@ type Props = {
 };
 
 const PageProducts = ({ products }: Props) => {
-  console.log("paso 2️⃣: llama a getProducts()", products);
-
-  if (!products.length) return <div>Cargando productos 🙂 </div>;
-  console.log("paso 3️⃣ : tiene productos?", products);
-
   return (
     <>
       <div className="relative px-4 grid sm:grid-cols-2 md:grid-cols-4 md:gap-8 justify-items-center">
-        {products.length ? (
+        {!products.length ? (
+          <div>Cargando productos...</div>
+        ) : (
           products.map((p) => (
             <Fragment key={p.id}>
               <ProductCard
@@ -28,10 +25,6 @@ const PageProducts = ({ products }: Props) => {
               />
             </Fragment>
           ))
-        ) : (
-          <>
-            <div>Cargando productos...</div>
-          </>
         )}
       </div>
     </>
