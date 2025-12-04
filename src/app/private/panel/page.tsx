@@ -1,5 +1,6 @@
 import PageProducts from "@/features/productos/components/PageProducts";
 import getProductos from "@/features/productos/getProductos";
+export const dynamic = "force-dynamic";
 
 export default async function PanelPage() {
   console.log("1️⃣ llama a productos");
