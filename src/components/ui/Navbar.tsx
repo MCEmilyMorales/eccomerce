@@ -51,6 +51,9 @@ const Navbar = () => {
                   <Link href={"/"}> Home </Link>
                 </li>
                 <li className="hover:font-bold focus:font-bold">
+                  <Link href={"/productos"}> Products </Link>
+                </li>
+                <li className="hover:font-bold focus:font-bold">
                   <Link href={"/registro"}> Register </Link>
                 </li>
                 <li className="hover:font-bold focus:font-bold">

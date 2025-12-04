@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </div>
       {/* Redireccion a productos si esta logueado */}
-      <Link href={"/private/panel/"}>
+      <Link href={"/productos"}>
         <div className="flex flex-col items-center bg-violet-05 pb-14">
           <div className="w-full mt-2 text-white text-center font-semibold cursor-pointer py-3 rounded-xl bg-violet-4 hover:bg-violet-5">
             <button>SHOP NOW</button>

@@ -17,9 +17,15 @@ const Productos = () => {
     fetchProducts();
   }, []);
 
-  if (!productos) return <p>Cargando productos...</p>;
-
-  return <PageProducts products={productos} />;
+  return (
+    <>
+      {!productos?.length ? (
+        <p>Cargando productos...</p>
+      ) : (
+        <PageProducts products={productos} />
+      )}
+    </>
+  );
 };
 
 export default Productos;
