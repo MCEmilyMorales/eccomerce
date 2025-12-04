@@ -3,6 +3,7 @@
 import { Product } from "@/services/productsService/productsData.type";
 import { Fragment } from "react";
 import ProductCard from "@/components/ecommerce/ProductCard";
+import Loading from "@/components/ui/Loading";
 
 type Props = {
   products: Product[];
@@ -13,7 +14,7 @@ const PageProducts = ({ products }: Props) => {
     <>
       <div className="relative px-4 grid sm:grid-cols-2 md:grid-cols-4 md:gap-8 justify-items-center">
         {!products.length ? (
-          <div>Cargando productos...</div>
+          <Loading />
         ) : (
           products.map((p) => (
             <Fragment key={p.id}>

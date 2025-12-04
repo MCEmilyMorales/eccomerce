@@ -1,11 +1,15 @@
 "use client";
 
+import Loading from "@/components/ui/Loading";
 import PageProducts from "@/features/productos/components/PageProducts";
 import getProductos from "@/features/productos/getProductos";
 import { Product } from "@/services/productsService/productsData.type";
 import { useEffect, useState } from "react";
 
 const Productos = () => {
+  const [loading, setLoading] = useState(true);
+  loading && <Loading />;
+
   const [productos, setProductos] = useState<Product[] | null>(null);
 
   useEffect(() => {
@@ -18,11 +22,7 @@ const Productos = () => {
 
   return (
     <>
-      {!productos?.length ? (
-        <p>Cargando productos...</p>
-      ) : (
-        <PageProducts products={productos} />
-      )}
+      {!productos?.length ? <Loading /> : <PageProducts products={productos} />}
     </>
   );
 };

@@ -78,7 +78,10 @@ const CartItem = () => {
           <tbody className="text-center border-b-[1] border-violet-4">
             {cart.length === 0 && cart ? (
               <tr>
-                <td> ... sin productos </td>
+                <td className="py-6 px-4 text-foreground">
+                  {" "}
+                  sin productos 😢{" "}
+                </td>
               </tr>
             ) : (
               cart.map((p) => (
